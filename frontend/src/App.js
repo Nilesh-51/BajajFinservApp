@@ -3,9 +3,7 @@ import React, { useState } from 'react';
 const App = () => {
     const [jsonInput, setJsonInput] = useState('');
     const [errorMessage, setErrorMessage] = useState('');
-    const [apiResponse, setApiResponse] = useState(null);
-    const [filterOptions, setFilterOptions] = useState([]);
-    
+    const [apiResponse, setApiResponse] = useState(null);    
     const handleSubmit = async (e) => {
         e.preventDefault();
         setErrorMessage('');
@@ -33,7 +31,6 @@ const App = () => {
 
             if (result.is_success) {
                 setApiResponse(result);
-                setFilterOptions([]); // Reset filter options
             } else {
                 setErrorMessage('Error processing request.');
             }
